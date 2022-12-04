@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Container>
       <Header>
-        <Image src={igniteLogo} alt="" />
+        <Image src={igniteLogo} alt="" priority />
       </Header>
       <Component {...pageProps} />
     </Container>
