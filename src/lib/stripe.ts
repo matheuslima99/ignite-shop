@@ -5,4 +5,5 @@ export const stripe = new Stripe(process.env.STRIPE_PUBLIC_KEY!, {
   appInfo: {
     name: "Ignite Shop",
   },
+
 });
