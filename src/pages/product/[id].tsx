@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Stripe from "stripe";
@@ -45,6 +45,13 @@ export default function Product({ product }: ProductProps) {
   );
 }
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [], //indicates that no page needs be created at build time
+    fallback: "blocking", //indicates the type of fallback
+  };
+};
+
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
   params,
 }) => {
@@ -62,14 +69,6 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
 
   const price = product.default_price as Stripe.Price;
 
-  async function getStaticPaths() {
-    return {
-      paths: [`/product/${productId}`],
-      fallback: true,
-    };
-  }
-
-  getStaticPaths();
   return {
     props: {
       product: {
