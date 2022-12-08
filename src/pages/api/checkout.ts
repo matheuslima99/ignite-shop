@@ -16,7 +16,7 @@ export default async function handler(
     return res.status(404).json({ error: "Price not found." });
   }
 
-  const sucessUrl = `${process.env.NEXT_URL}/success`;
+  const sucessUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`;
   const cancelUrl = `${process.env.NEXT_URL}/`;
 
   const checkoutSession = await stripe.checkout.sessions.create({
