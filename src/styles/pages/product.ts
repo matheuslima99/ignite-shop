@@ -61,7 +61,12 @@ export const ProductDetails = styled("div", {
     fontWeight: "bold",
     fontSize: "$md",
 
-    "&:hover": {
+    "&:disabled": {
+      opacity: 0.7,
+      cursor: "not-allowed",
+    },
+
+    "&:not(:disabled):hover": {
       background: "$green300",
       transition: "0.2s",
     },
