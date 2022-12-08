@@ -19,13 +19,14 @@ interface ProductProps {
     url: string;
     description: string;
     price: string;
+    defaultPriceId: string;
   };
 }
 
 export default function Product({ product }: ProductProps) {
-  const { query } = useRouter();
-
-  console.log(query);
+  function handleBuyProduct() {
+    console.log(product.defaultPriceId);
+  }
 
   return (
     <ProductContainer>
@@ -39,7 +40,7 @@ export default function Product({ product }: ProductProps) {
 
         <p>{product.description}</p>
 
-        <button>Comprar agora</button>
+        <button onClick={handleBuyProduct}>Comprar agora</button>
       </ProductDetails>
     </ProductContainer>
   );
@@ -78,6 +79,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
         url: product.url,
         description: product.description,
         price: priceFormatter.format(price.unit_amount! / 100),
+        defaultPriceId: price.id,
       },
     },
     revalidate: 60 * 60 * 1, // 1 hour
