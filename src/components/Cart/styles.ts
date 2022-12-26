@@ -63,8 +63,8 @@ export const CartItemImage = styled("div", {
 
   img: {
     objectFit: "cover",
-  }
-})
+  },
+});
 
 export const CartItemDetails = styled("div", {
   height: "100%",
@@ -73,12 +73,12 @@ export const CartItemDetails = styled("div", {
 
   p: {
     color: "$gray300",
-    fontSize: "1.125rem"
+    fontSize: "1.125rem",
   },
 
   strong: {
     marginTop: 4,
-    fontSize: "1.125rem"
+    fontSize: "1.125rem",
   },
 
   button: {
@@ -90,7 +90,66 @@ export const CartItemDetails = styled("div", {
     cursor: "pointer",
     color: "$green500",
     background: "none",
-    marginTop: "auto"
-  }
+    marginTop: "auto",
+  },
+});
 
-})
+export const CartFooter = styled("footer", {
+  marginTop: "auto",
+
+  display: "flex",
+  flexDirection: "column",
+
+  button: {
+    fontSize: "$md",
+    fontWeight: 700,
+    border: "none",
+    outline: "none",
+    borderRadius: 8,
+    cursor: "pointer",
+    padding: "1.25rem 2rem",
+    color: "$white",
+    background: "$green500",
+
+    "&:disabled": {
+      opacity: 0.6,
+      cursor: "not-allowed",
+    },
+
+    "&:not(:disabled):hover": {
+      background: "$green300",
+    },
+  },
+});
+
+export const CartFooterDetails = styled("section", {
+  marginBottom: "3.5625rem",
+
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.5rem",
+
+  div: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+
+    p: {
+      fontSize: "$md",
+      color: "$gray300",
+    },
+
+    "&:last-child": {
+      fontWeight: 700,
+
+      span: {
+        fontSize: "$md",
+      },
+
+      p: {
+        fontSize: "$xl",
+        color: "$gray100"
+      },
+    },
+  },
+});
