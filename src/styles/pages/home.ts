@@ -1,5 +1,5 @@
 import { styled } from "..";
-import Link from 'next/link'
+import Link from "next/link";
 
 export const HomeContainer = styled("main", {
   width: "100%",
@@ -40,9 +40,15 @@ export const Product = styled(Link, {
     alignItems: "center",
     justifyContent: "space-between",
 
+    div: {
+      display: "flex",
+      flexDirection: "column",
+      gap: ".25rem",
+    },
+
     strong: {
       fontSize: "$lg",
-      color: "$gray100"
+      color: "$gray100",
     },
 
     span: {
