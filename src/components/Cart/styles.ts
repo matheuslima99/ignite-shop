@@ -24,6 +24,7 @@ export const CartContent = styled(Dialog.Content, {
 
   section: {
     marginTop: "2rem",
+    overflowY: "auto",
   },
 });
 
@@ -49,6 +50,10 @@ export const CartItem = styled("div", {
   display: "flex",
   gap: "1.25rem",
   alignItems: "center",
+
+  "& + div": {
+    marginTop: "1.5rem",
+  },
 });
 
 export const CartItemImage = styled("div", {
@@ -148,7 +153,7 @@ export const CartFooterDetails = styled("section", {
 
       p: {
         fontSize: "$xl",
-        color: "$gray100"
+        color: "$gray100",
       },
     },
   },

@@ -17,4 +17,17 @@ export const globalStyles = globalCss({
     fontFamily: "Roboto",
     fontWeight: 400,
   },
+  
+  "::-webkit-scrollbar": {
+    width: "0.45rem",
+  }, 
+
+  "::-webkit-scrollbar-track": {
+    background: "$gray700"
+  },
+
+  "::-webkit-scrollbar-thumb": {
+    borderRadius: "2rem",
+    background: "$green500",
+  }
 });
