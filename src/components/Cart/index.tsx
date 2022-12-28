@@ -11,12 +11,16 @@ import {
   CartFooterDetails,
 } from "./styles";
 
+import { priceFormatter } from "../../utils/formatter";
+
 import { X } from "phosphor-react";
 import { useCart } from "../../hooks/useCart";
 
 export function Cart() {
-  const { cartItems } = useCart();
+  const { cartItems, removeFromCart, cartTotal } = useCart();
   const cartQuantity = cartItems.length;
+
+  const formattedCartTotal = priceFormatter.format(cartTotal);
 
   return (
     <Dialog.Root>
@@ -49,7 +53,9 @@ export function Cart() {
                 <CartItemDetails>
                   <span>{product.name}</span>
                   <strong>{product.price}</strong>
-                  <button onClick={() => console.log("remove")}>Remover</button>
+                  <button onClick={() => removeFromCart(product.id)}>
+                    Remover
+                  </button>
                 </CartItemDetails>
               </CartItem>
             ))}
@@ -68,7 +74,7 @@ export function Cart() {
 
               <div>
                 <span>Valor total</span>
-                <p>R$ 270,00</p>
+                <p>{formattedCartTotal}</p>
               </div>
             </CartFooterDetails>
 
