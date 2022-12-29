@@ -13,6 +13,23 @@ export const CartButtonContainer = styled("button", {
     cursor: "not-allowed",
   },
 
+  '& > span': {
+    width: "1.5rem",
+    height: "1.5rem",
+    position: "absolute",
+    top: "calc(-1.5rem / 2)",
+    right: "calc(-1.5rem / 2)",
+    fontSize: ".875rem",
+    fontWeight: "bold",
+    borderRadius: "50%",
+    color: "$white",
+    background: "$green500",
+    
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
   variants: {
     color: {
       gray: {
