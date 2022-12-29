@@ -8,6 +8,7 @@ export interface iProduct {
   numberPrice: number;
   description: string;
   defaultPrice: string;
+  defaultPriceId: string;
 }
 
 interface CartContextData {
